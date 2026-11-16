@@ -1,0 +1,41 @@
+{
+  "name": "snowman_dance",
+  "_notes": [
+    "Reconstructed by eye from the reference video (about 4.5 s to 19.3 s of the clip). Times are seconds, angles are degrees.",
+    "rootYaw: turns the whole body. Negative = turn toward the character's left (profile view), positive = toward the right. 0 = facing the front-view camera.",
+    "bounce: extra hip drop in model pixels (small knee-bounce feel). torso/head: [pitch, yaw, roll]. Pitch + = lean/look forward-down. Yaw + = turn right. Roll + = lean left.",
+    "rArm/lArm/rLeg/lLeg: [xRot, yRot, zRot] exactly like Minecraft ModelPart rotations. xRot negative = swing forward. Right arm zRot + = out to the side, left arm zRot - = out to the side.",
+    "Missing channels use the neutral standing pose."
+  ],
+  "keyframes": [
+    { "t": 0.0,  "rootYaw": -70 },
+    { "t": 0.5,  "rootYaw": -70, "torso": [20, 0, 0],  "head": [-10, 0, 0], "rArm": [-60, -10, 5],  "lArm": [-100, 30, -10], "rLeg": [-25, 0, 0], "lLeg": [30, 0, 0] },
+    { "t": 1.0,  "rootYaw": -70, "torso": [35, 0, 0],  "head": [-20, 0, 0], "rArm": [-85, 0, 5],    "lArm": [-40, 20, -30],  "rLeg": [-45, 0, 3], "lLeg": [40, 0, -3] },
+    { "t": 1.5,  "rootYaw": -70, "torso": [25, 0, 0],  "head": [-15, 0, 0], "rArm": [-90, 0, 10],   "lArm": [-30, 0, -25],   "rLeg": [-30, 0, 0], "lLeg": [25, 0, 0] },
+    { "t": 2.0,  "rootYaw": -70, "torso": [8, 0, 0],   "head": [-5, 0, 0],  "rArm": [-90, -5, 15],  "lArm": [-60, 35, -5],   "rLeg": [-8, 0, 0],  "lLeg": [28, 0, -5], "bounce": 0.5 },
+    { "t": 2.5,  "rootYaw": -65, "torso": [5, -10, 0], "rArm": [-80, 0, 25],  "lArm": [-70, 30, -5],   "rLeg": [20, 0, 0], "lLeg": [-15, 0, 0] },
+    { "t": 3.0,  "rootYaw": -50, "torso": [0, 20, 5],  "rArm": [-70, -10, 35], "lArm": [-20, 0, -30],   "rLeg": [-10, 0, 0], "lLeg": [10, 0, 0] },
+    { "t": 3.5,  "rootYaw": -42, "torso": [0, 0, 8],   "head": [0, 0, -8],  "rArm": [-60, 0, 50],   "lArm": [-90, 40, -10],  "rLeg": [0, 0, 6], "lLeg": [0, 0, -6], "bounce": 0.8 },
+    { "t": 4.0,  "rootYaw": -40, "torso": [0, 0, -8],  "head": [8, 0, 0],   "rArm": [-70, 20, 40],  "lArm": [-100, 30, -20], "rLeg": [-5, 0, 8], "lLeg": [5, 0, -4] },
+    { "t": 4.5,  "rootYaw": -40, "torso": [0, 0, 8],   "rArm": [-95, 10, 30], "lArm": [-60, 40, -30],  "bounce": 1.0 },
+    { "t": 5.0,  "rootYaw": -30, "torso": [0, -10, 0], "rArm": [-80, -10, 30], "lArm": [-100, 40, -10], "rLeg": [12, 0, 0], "lLeg": [-12, 0, 0], "bounce": 0.5 },
+    { "t": 5.5,  "rootYaw": -25, "torso": [0, -10, 0], "rArm": [-82, -10, 30], "lArm": [-100, 40, -10], "rLeg": [-12, 0, 0], "lLeg": [12, 0, 0], "bounce": 1.0 },
+    { "t": 6.0,  "rootYaw": -20, "torso": [0, -10, 0], "rArm": [-82, -10, 30], "lArm": [-100, 40, -10], "rLeg": [12, 0, 0], "lLeg": [-12, 0, 0], "bounce": 0.5 },
+    { "t": 6.5,  "rootYaw": -10, "torso": [5, 0, 0],   "rArm": [-85, -10, 40], "lArm": [-85, 10, -40],  "rLeg": [0, 0, 5], "lLeg": [0, 0, -5] },
+    { "t": 7.0,  "rootYaw": -5,  "torso": [0, 0, 10],  "rArm": [-150, 0, 30], "lArm": [-60, 0, -45],   "rLeg": [0, 0, 8], "lLeg": [0, 0, -8] },
+    { "t": 7.5,  "rootYaw": 0,   "torso": [0, 0, -10], "head": [0, 0, 8],   "rArm": [-170, 0, 25],  "lArm": [-10, 0, -30],   "rLeg": [0, 0, 6], "lLeg": [0, 0, -6], "bounce": 0.5 },
+    { "t": 8.0,  "rootYaw": 5,   "torso": [0, -10, 12], "head": [5, 0, 0],  "rArm": [-175, 0, 20],  "lArm": [0, 0, -25],     "rLeg": [0, 0, 6], "lLeg": [0, 0, -6], "bounce": 1.0 },
+    { "t": 8.5,  "rootYaw": 5,   "torso": [0, 0, -6],  "rArm": [-140, 0, 35], "lArm": [-20, 0, -30],   "rLeg": [8, 0, 0], "lLeg": [-8, 0, 0] },
+    { "t": 9.0,  "rootYaw": 10,  "torso": [0, 0, 8],   "rArm": [-70, 30, 10], "lArm": [-150, 0, -40],  "rLeg": [-8, 0, 0], "lLeg": [8, 0, 0], "bounce": 1.0 },
+    { "t": 9.5,  "rootYaw": 15,  "torso": [0, 0, 0],   "rArm": [-80, 25, 10], "lArm": [-85, -25, -10], "rLeg": [0, 0, 3], "lLeg": [0, 0, -3], "bounce": 0.8 },
+    { "t": 10.0, "rootYaw": 15,  "torso": [0, 0, -5],  "rArm": [-70, 30, 12], "lArm": [-90, -20, -20], "rLeg": [0, 0, 3], "lLeg": [0, 0, -3] },
+    { "t": 10.5, "rootYaw": 15,  "torso": [0, 0, 5],   "rArm": [-75, 25, 14], "lArm": [-88, -22, -22], "rLeg": [0, 0, 4], "lLeg": [0, 0, -4], "bounce": 0.8 },
+    { "t": 11.0, "rootYaw": 20,  "torso": [0, 12, 0],  "rArm": [-70, 20, 15], "lArm": [-80, -25, -25], "rLeg": [0, 0, 4], "lLeg": [0, 0, -4] },
+    { "t": 11.5, "rootYaw": -35, "torso": [0, 0, 0],   "rArm": [-30, 0, 15],  "lArm": [-40, 10, -20] },
+    { "t": 12.0, "rootYaw": -40, "torso": [0, 25, 0],  "rArm": [-10, 0, 25],  "lArm": [-15, 0, -15] },
+    { "t": 12.5, "rootYaw": -40, "torso": [0, -20, 0], "rArm": [0, 0, 60],    "lArm": [-20, 0, -10] },
+    { "t": 13.0, "rootYaw": -20, "torso": [0, 0, 0],   "rArm": [-5, 0, 35],   "lArm": [0, 0, -15] },
+    { "t": 13.5, "rootYaw": 0 },
+    { "t": 14.0, "rootYaw": 0 }
+  ]
+}

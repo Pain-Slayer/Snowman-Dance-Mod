@@ -1,0 +1,47 @@
+name: Build mod
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 21
+
+      - uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-version: 8.14.3
+
+      - name: Look up newest Fabric Loader and Fabric API for this Minecraft version
+        id: versions
+        run: |
+          MC=$(grep '^minecraft_version=' gradle.properties | cut -d= -f2)
+          LOADER=$(curl -fsSL "https://meta.fabricmc.net/v2/versions/loader/$MC" | jq -r '[.[] | select(.loader.stable)][0].loader.version // empty' || true)
+          FAPI=$(curl -fsSL -G "https://api.modrinth.com/v2/project/fabric-api/version" \
+                   -H "User-Agent: mcdance-build" \
+                   --data-urlencode "game_versions=[\"$MC\"]" \
+                   --data-urlencode 'loaders=["fabric"]' | jq -r '.[0].version_number // empty' || true)
+          echo "Minecraft $MC | loader '$LOADER' | fabric-api '$FAPI'"
+          echo "loader=$LOADER" >> "$GITHUB_OUTPUT"
+          echo "fapi=$FAPI" >> "$GITHUB_OUTPUT"
+
+      - name: Build
+        run: |
+          ARGS=""
+          if [ -n "${{ steps.versions.outputs.loader }}" ]; then ARGS="$ARGS -Ploader_version=${{ steps.versions.outputs.loader }}"; fi
+          if [ -n "${{ steps.versions.outputs.fapi }}" ]; then ARGS="$ARGS -Pfabric_version=${{ steps.versions.outputs.fapi }}"; fi
+          gradle build --no-daemon --stacktrace $ARGS
+
+      - name: Upload the finished jar
+        uses: actions/upload-artifact@v4
+        with:
+          name: mcdance-snowman-dance-jar
+          path: build/libs/*.jar
+          if-no-files-found: error

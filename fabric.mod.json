@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "id": "mcdance",
+  "version": "${version}",
+  "name": "Snowman Dance",
+  "description": "Press G to make your player perform a custom dance recreated from a reference video. Client-side only.",
+  "authors": ["You"],
+  "license": "All-Rights-Reserved",
+  "environment": "client",
+  "entrypoints": {
+    "client": ["dev.mcdance.DanceModClient"]
+  },
+  "mixins": [
+    { "config": "mcdance.mixins.json", "environment": "client" }
+  ],
+  "depends": {
+    "fabricloader": ">=0.17.0",
+    "minecraft": "~1.21.10",
+    "java": ">=21",
+    "fabric-api": "*"
+  }
+}
