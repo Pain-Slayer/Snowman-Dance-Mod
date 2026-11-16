@@ -16,8 +16,8 @@ dependencies {
     modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
 }
 
-// The uploaded project currently stores Java and resource files at the repository root.
-// Keep that layout buildable without requiring the user to reorganize files manually.
+// The uploaded source files currently live in the repository root.
+// Include those Java files and package the root-level Fabric metadata/resources.
 sourceSets {
     main {
         java {
@@ -32,7 +32,6 @@ sourceSets {
 
 processResources {
     inputs.property "version", project.version
-
     from('fabric.mod.json')
     from('mcdance.mixins.json')
     from('en_us.json') {
@@ -41,7 +40,6 @@ processResources {
     from('snowman_dance.json') {
         into 'assets/mcdance/animations'
     }
-
     filesMatching("fabric.mod.json") {
         expand "version": inputs.properties.version
     }
